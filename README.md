@@ -20,7 +20,7 @@ I always like to run a fast/aggressive scan over the network with **Nmap.** To d
 
 *192.168.1.1/24 is my local network --- yours might be different. Check it with the command* `ip a`.
 
-**Disclaimer:** In real world situations, this scans may trigger firewalls and other network security appliances (in case the network is secure). If you want to run a softer scan, just change -sV to -sS. Once you know the open ports, you can target them individually. Change -T4 (speed 4) to -T1 (slow speed) as well. It's not undetectable but less probable.
+> **Note:** In real world situations, this scans may trigger firewalls and other network security appliances (in case the network is secure). If you want to run a softer scan, just change `-sV` to `-sS`. Once you know the open ports, you can target them individually. Change `-T4` (speed 4) to `-T1` (slow speed, will take ages) as well. It's not undetectable but less probable.
 
 After getting the victim's IP, I like to run another scan. This time a more **thorough and focused scan** with the command:
 
@@ -81,8 +81,11 @@ Ok, now we know that ports 21 **(FTP)**, 22 **(SSH)** and 80 **(HTTP)** are open
 
     ftp 192.168.1.12
 
-USERNAME: anonymous
-PASSWORD: 
+> **USER:** anonymous 
+> 
+> **PASS:**
+
+ 
 
 And now we can list the files. `ls` and we can see a `lol.pcap` file. This files are the output files of sniffing tools like **Wireshark**. Let's download it and have a look.
 
@@ -118,8 +121,9 @@ More files. This time looks like we get a usernames list and a Pass.txt. Let's t
 
 Note I have made a new text document with the usernames. And quickly we find a valid combination:
 
-**USER:** overflow
-**PASS:** Pass.txt
+> **USER:** overflow
+> 
+> **PASS:** Pass.txt
 
 Let's connect via **SSH**! Ok, now we're into the system! Let's start enumerating and deciding the way to escalate privileges but first:
 
