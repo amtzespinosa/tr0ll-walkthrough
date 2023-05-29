@@ -180,3 +180,5 @@ And we should see a root shell now!
     #
 
 Change to the `root` directory and there youll find **proof.txt**. You made it! And that's it for this machine. Happy hacking!
+
+Check my next adventure: [CTF #4 - Kioptrix 1.1](https://github.com/amtzespinosa/kioptrix2-walkthrough)
